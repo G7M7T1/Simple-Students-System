@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="G7M7T1">
+    <meta name="robots" content="index,follow">
+    <title><%= data.name %></title>
+    <link rel="stylesheet" href="/styles/studentpage.css">
+</head>
+<body>
+    <h1><%= data.name %> Infomation</h1>
+    <a href="/students">Back to Student Page</a>
+    <table>
+        <tr>
+            <td>Student ID</td>
+            <td><%= data.id %></td>
+        </tr>
+        <tr>
+            <td>Student Name</td>
+            <td><%= data.name %></td>
+        </tr>
+        <tr>
+            <td>Student Age</td>
+            <td><%= data.age %></td>
+        </tr>
+        <tr>
+            <td>Merit Scholarship</td>
+            <td><%= data.scholarship.merit %></td>
+        </tr>
+        <tr>
+            <td>Other Scholarship</td>
+            <td><%= data.scholarship.other %></td>
+        </tr>
+        <tr>
+            <td>Total Scholarship</td>
+            <td><%= data.scholarship.merit + data.scholarship.other %></td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    color: white;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    h1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3rem;
+        padding: 3rem 0rem 0rem 0rem;
+    }
+    a{
+        color: aqua;
+        text-decoration: none;
+        font-size: 1.5rem;
+        padding: 3rem;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        label{
+            text-align: center;
+        }
+        input{
+            text-align: center;
+            border-radius: 5rem;
+        }
+        button{
+            margin: 1rem;
+            border-radius: 2rem;
+            background-color: white;
+            border: none;
+            color: aqua;
+        }
+    }
+}
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

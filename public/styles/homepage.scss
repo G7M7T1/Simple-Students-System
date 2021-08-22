@@ -1,0 +1,28 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    color: white;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    min-height: 90vh;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem;
+    font-size: 3rem;  
+}
+
+a{
+    color: aqua;
+    text-decoration: none;
+}

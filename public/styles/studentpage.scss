@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    color: white;
+    background-color: black;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 0rem 0rem 0rem;
+}
+
+a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: aqua;
+    font-size: 1.5rem;
+    margin: 3rem;
+}
+
+table{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5rem;
+}
+
+tr, td{
+    border: 2px solid rgb(105, 105, 105);
+    padding: 1rem 3rem;
+}

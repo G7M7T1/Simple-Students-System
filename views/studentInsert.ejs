@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="G7M7T1">
+    <meta name="description" content="Create new studnet here">
+    <meta name="robots" content="index,follow">
+    <title>Add New Student</title>
+    <link rel="stylesheet" href="/styles/addnew.css">
+</head>
+<body>
+    <h1>Add New Student</h1>
+    <a href="/students">Back to Students List</a>
+    <form action="/students/insert" method="POST">
+        <label for="id">Student ID</label>
+        <input type="number" type="id" name="id" placeholder="Student ID" required>
+
+        <label for="name">Student Name</label>
+        <input type="text" name="name" id="name" placeholder="Enter your name" required minlength="4">
+
+        <label for="age">Student Age</label>
+        <input type="number" name="age" id="age" placeholder="Enter your Age" required min="6" max="120">
+
+        <label for="merit">Merit scholarship</label>
+        <input type="number" name="merit" id="merit" placeholder="Merit scholarship" required min="0" max="5000">
+
+        <label for="other">Other scholarship</label>
+        <input type="number" name="other" id="other" placeholder="Other scholarship" required min="0">
+        <button>Submit</button>
+    </form>
+</body>
+</html>
