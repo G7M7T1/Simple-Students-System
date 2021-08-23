@@ -4,11 +4,14 @@ const chalk = require("chalk");
 const express = require("express");
 const mongoose = require("mongoose");
 const Student = require("./models/student");
+const methodOverride = require("method-override");
 
 // static file here
 const app = express();
 app.set("view engine", "ejs");
 app.use(express.static("public"));
+app.use(methodOverride("_method"));
+mongoose.set("useFindAndModify", false);
 app.use(express.urlencoded({ extended: true }));
 
 // connect mongoose
@@ -76,6 +79,63 @@ app.post("/students/insert", (req, res) => {
       res.render("reject.ejs");
     });
 });
+
+app.get("/students/edit/:id", async (req, res) => {
+  let { id } = req.params;
+  try {
+    let data = await Student.findOne({ id });
+    if (data !== null) {
+      res.render("edit.ejs", { data });
+    } else {
+      res.render("idnotfound.ejs", { id });
+    }
+  } catch (e) {
+    console.log(e);
+  }
+});
+
+app.put("/students/edit/:id", async (req, res) => {
+  let { id, name, age, merit, other } = req.body;
+  try {
+    let d = await Student.findOneAndUpdate(
+      { id },
+      { id, name, age, scholarship: { merit, other } },
+      {
+        new: true,
+        runValidators: true,
+      }
+    );
+    res.redirect(`/students/${id}`);
+  } catch {
+    res.render("reject.ejs");
+  }
+});
+
+app.get("/students/delete/:id", async (req, res) => {
+  let { id } = req.params;
+  let d = await Student.deleteOne({ id: id }, function (err, data) {
+    if (!err) {
+      console.log(data);
+      res.render("delete.ejs");
+    } else {
+      console.log(err);
+      res.render("reject.ejs");
+    }
+  });
+});
+
+// app.delete("/students/delete/:id", (req, res) => {
+//   let { id } = req.params;
+//   Student.deleteOne({ id })
+//     .then((meg) => {
+//       console.log(meg);
+//       res.render("delete.ejs");
+//     })
+//     .catch((e) => {
+//       console.log(e);
+//       res.render("reject.ejs");
+//     });
+// });
 
 app.get("/*", (req, res) => {
   res.status(404);

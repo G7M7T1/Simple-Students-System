@@ -12,6 +12,8 @@
 <body>
     <h1><%= data.name %> Infomation</h1>
     <a href="/students">Back to Student Page</a>
+    <a href="/students/edit/<%= data.id %>">Edit this Student Page</a>
+
     <table>
         <tr>
             <td>Student ID</td>
@@ -38,5 +40,6 @@
             <td><%= data.scholarship.merit + data.scholarship.other %></td>
         </tr>
     </table>
+    <a href="/students/delete/<%= data.id %>">Delete this Student</a>
 </body>
 </html>
